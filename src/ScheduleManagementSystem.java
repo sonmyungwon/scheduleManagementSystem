@@ -40,15 +40,20 @@ public class ScheduleManagementSystem {
 			pnum="";
 			break;
 		case 3:
-			System.out.println("schedule name: "+scheduleName);		
+			System.out.println("schedule name: "+scheduleName);
+			System.out.print("change	: ");
 			scheduleName = input.next();
 			System.out.println("schedule date: "+scheduleDate);
+			System.out.print("change	: ");
 			scheduleDate = input.next();
 			System.out.println("meeting place: "+ place);
+			System.out.print("change	: ");
 			place = input.next();
 			System.out.println("With whom: "+friend);
+			System.out.print("change	: ");
 			friend = input.next();
 			System.out.println("contact number: "+pnum);
+			System.out.print("change	: ");
 			pnum = input.next();
 			break;
 		case 4:
