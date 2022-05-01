@@ -2,7 +2,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Schedule.DeadlineSchedule;
 import Schedule.Highschedule;
+import Schedule.LowSchedule;
 import Schedule.Schedule;
 
 public class ScheduleManager {
@@ -17,20 +19,27 @@ public class ScheduleManager {
 		Schedule schedule = new Schedule();
 		while(im !=1 && im !=2) {
 			System.out.println("1. high");
-			System.out.println("2. low");
-			System.out.print("select num 1 or 2 : ");
+			System.out.println("2. Low");
+			System.out.println("3. Deadline");
+			System.out.print("Select num 1,2 or 3 : ");
 			im =input.nextInt();
 			if(im==1) {
 				schedule = new Highschedule();
 				schedule.getUserInput(input);
 				schedules.add(schedule);
 			}else if(im==2) {
-				schedule = new Schedule();
+				schedule = new LowSchedule();
 				schedule.getUserInput(input);
 				schedules.add(schedule);
-			}else {
-				System.out.print("select num 1 or 2");
+			}else if(im==3) {
+				schedule = new DeadlineSchedule();
+				schedule.getUserInput(input);
+				schedules.add(schedule);
 			}
+			else {
+				System.out.print("select num 1 ,2 or 3");
+			}
+			break;
 		}
 
 	}

@@ -3,6 +3,7 @@ package Schedule;
 import java.util.Scanner;
 
 public class Highschedule extends Schedule {
+	Importance imp=Importance.High ;
 
 	public void getUserInput(Scanner input){
 		System.out.println("ex 220324");

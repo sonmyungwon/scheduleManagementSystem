@@ -3,7 +3,7 @@ package Schedule;
 import java.util.Scanner;
 
 public class Schedule {
-	protected Importance imp= Importance.Low;
+	protected Importance imp=Importance.Low ;
 	protected int Date;
 	protected String Name;
 	protected String Place;
@@ -17,7 +17,15 @@ public class Schedule {
 		this.Name= Name;
 		this.Place =Place;
 	}
-	public void chedule(int Date, String Name,String Place,String With, String Pnum) {
+	public Schedule(int Date, String Name,String Place,String With, String Pnum) {
+		this.Date=Date;
+		this.Name= Name;
+		this.Place =Place;
+		this.With= With;
+		this.Pnum= Pnum;
+	}
+	public Schedule(Importance imp,int Date, String Name,String Place,String With, String Pnum) {
+		this.imp=imp;
 		this.Date=Date;
 		this.Name= Name;
 		this.Place =Place;
@@ -25,7 +33,19 @@ public class Schedule {
 		this.Pnum= Pnum;
 	}
 	public void printInfo() {
-		System.out.println("  Schedule Date:  "+ Date +"  Schedule Name:  " + Name + "  Schedule Place:  "+ Place + "  With whom:  "+ With + "  Connect Phone Number:  " +Pnum);
+		String simp="none";
+		switch(this.imp){
+		case High:
+			simp="High";
+			break;
+		case Low:
+			simp="Low";
+			break;
+		case Deadline:
+			simp="deadline";
+			break;
+		}
+		System.out.println("inportance : "+ simp +"  Schedule Date:  "+ Date +"  Schedule Name:  " + Name + "  Schedule Place:  "+ Place + "  With whom:  "+ With + "  Connect Phone Number:  " +Pnum);
 	}
 
 	public int getDate() {
