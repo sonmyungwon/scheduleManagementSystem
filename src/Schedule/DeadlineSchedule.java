@@ -2,19 +2,22 @@ package Schedule;
 
 import java.util.Scanner;
 
-public class DeadlineSchedule extends Schedule {
+public class DeadlineSchedule extends Schedule implements ScheduleInput{
 		Importance imp=Importance.Deadline ;
 		protected String deadline ;
+		
 		public String getdeadline() {
 			return deadline;
 		}
+		
 		public void setdeadline(String deadline) {
 			this.deadline = deadline;
 		}
-	public DeadlineSchedule() {
 		
-	}
-	public void printInfo() {
+		public DeadlineSchedule() {
+		
+		}
+		public void printInfo() {
 		String simp="none";
 		switch(this.imp){
 		case High:
@@ -28,8 +31,8 @@ public class DeadlineSchedule extends Schedule {
 			break;
 		}
 		System.out.println("inportance : "+ simp +"  Schedule Date:  "+ Date +"  Schedule Name:  " + Name +"  DeadLine :"+deadline+ "  Schedule Place:  "+ Place + "  With whom:  "+ With + "  Connect Phone Number:  " +Pnum);
-	}
-	public void getUserInput(Scanner input){
+		}
+		public void getUserInput(Scanner input){
 		System.out.println("ex 220324");
 		System.out.print("schedule date : ");
 		int Date = input.nextInt();
@@ -64,5 +67,6 @@ public class DeadlineSchedule extends Schedule {
 		String Pnum = input.next();
 		this.setPnum(Pnum); 
 	}
+	
 
 }

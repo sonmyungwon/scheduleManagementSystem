@@ -2,7 +2,7 @@ package Schedule;
 
 import java.util.Scanner;
 
-public class Highschedule extends Schedule {
+public class Highschedule extends Schedule implements ScheduleInput {
 	Importance imp=Importance.High ;
 
 	public void getUserInput(Scanner input){
@@ -36,6 +36,21 @@ public class Highschedule extends Schedule {
 		System.out.print("contact number: ");
 		String Pnum = input.next();
 		this.setPnum(Pnum); 
+	}
+	public void printInfo() {
+		String simp="none";
+		switch(this.imp){
+		case High:
+			simp="High";
+			break;
+		case Low:
+			simp="Low";
+			break;
+		case Deadline:
+			simp="deadline";
+			break;
+		}
+		System.out.println("inportance : "+ simp +"  Schedule Date:  "+ Date +"  Schedule Name:  " + Name + "  Schedule Place:  "+ Place + "  With whom:  "+ With + "  Connect Phone Number:  " +Pnum);
 	}
 
 }

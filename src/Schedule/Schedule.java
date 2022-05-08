@@ -2,7 +2,7 @@ package Schedule;
 
 import java.util.Scanner;
 
-public class Schedule {
+public abstract class Schedule {
 	protected Importance imp=Importance.Low ;
 	protected int Date;
 	protected String Name;
@@ -32,22 +32,7 @@ public class Schedule {
 		this.With= With;
 		this.Pnum= Pnum;
 	}
-	public void printInfo() {
-		String simp="none";
-		switch(this.imp){
-		case High:
-			simp="High";
-			break;
-		case Low:
-			simp="Low";
-			break;
-		case Deadline:
-			simp="deadline";
-			break;
-		}
-		System.out.println("inportance : "+ simp +"  Schedule Date:  "+ Date +"  Schedule Name:  " + Name + "  Schedule Place:  "+ Place + "  With whom:  "+ With + "  Connect Phone Number:  " +Pnum);
-	}
-
+	public abstract void printInfo();
 	public int getDate() {
 		return Date;
 	}
@@ -78,26 +63,5 @@ public class Schedule {
 	public void setPnum(String pnum) {
 		Pnum = pnum;
 	}
-	public void getUserInput(Scanner input){
-		System.out.println("ex 220324");
-		System.out.print("schedule date : ");
-		int Date = input.nextInt();
-		this.setDate(Date);
-
-		System.out.print("schedule name: ");		
-		String Name = input.next();
-		this.setName(Name);
-
-		System.out.print("meeting place: ");
-		String Place = input.next();
-		this.setPlace(Place);
-
-		System.out.print("With whom: ");
-		String With = input.next();
-		this.setWith(With);
-
-		System.out.print("contact number: ");
-		String Pnum = input.next();
-		this.setPnum(Pnum); 
-	}
+	
 }

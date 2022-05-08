@@ -2,7 +2,7 @@ package Schedule;
 
 import java.util.Scanner;
 
-public class LowSchedule extends Schedule {
+public class LowSchedule extends Schedule implements ScheduleInput{
 	protected String expecteddate;
 	public LowSchedule(){
 		
