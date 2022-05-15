@@ -1,4 +1,4 @@
-package Schedule;
+package ScheduleManagement;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

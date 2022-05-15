@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Highschedule extends Schedule{
 	Importance imp=Importance.High ;
 	
-	Highschedule(Importance imp){
+	public Highschedule(Importance imp){
 		this.imp=imp;
 	}
 	public void getUserInput(Scanner input){

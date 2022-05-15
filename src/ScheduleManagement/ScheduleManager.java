@@ -1,8 +1,14 @@
-package Schedule;
+package ScheduleManagement;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import Schedule.DeadlineSchedule;
+import Schedule.Highschedule;
+import Schedule.Importance;
+import Schedule.LowSchedule;
+import Schedule.ScheduleInput;
 
 public class ScheduleManager {
 	ArrayList<ScheduleInput> schedules =new ArrayList<ScheduleInput>();
