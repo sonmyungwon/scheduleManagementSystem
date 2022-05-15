@@ -2,6 +2,8 @@ package Schedule;
 
 import java.util.Scanner;
 
+import exception.PhoneFormatException;
+
 public interface ScheduleInput {
 
 	void getUserInput(Scanner input);
@@ -16,8 +18,17 @@ public interface ScheduleInput {
 
 	void setWith(String with);
 
-	void setPnum(String pnum);
+	void setPnum(String pnum) throws PhoneFormatException;
 
 	void printInfo();
-
+	
+	void setScheduleDate( Scanner input );
+	
+	void setScheduleName( Scanner input );
+	
+	void setSchedulePlace( Scanner input );
+	
+	void setScheduleWith( Scanner input );
+	
+	void setSchedulePnum( Scanner input );
 }
