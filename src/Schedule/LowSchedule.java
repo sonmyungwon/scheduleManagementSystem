@@ -37,11 +37,11 @@ public class LowSchedule extends Schedule{
 	public void checkexpectedPnum(Scanner input) {
 		char answer='x';
 		while(answer!='y' &&answer!='Y' &&answer!='n' &&answer!='N' ) {
-			System.out.print("Is the exact date not set?(Y/n)?:");
+			System.out.print("connect number?(Y/n)?:");
 			answer =input.next().charAt(0);
 			try {
 				if(answer=='y'|| answer =='Y') {
-					System.out.print("expected date :");
+					System.out.print("phone number :");
 					String pnum = input.next();
 
 					this.setPnum(pnum);

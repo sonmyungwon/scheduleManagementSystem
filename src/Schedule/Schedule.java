@@ -1,10 +1,16 @@
 package Schedule;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.PhoneFormatException;
 
-public abstract class Schedule  implements ScheduleInput{
+public abstract class Schedule  implements ScheduleInput,Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 138012443816169176L;
+	
 	protected Importance imp=Importance.Low ;
 	protected int Date;
 	protected String Name;
