@@ -31,10 +31,7 @@ public class ScheduleViewer extends JPanel {
 			Vector row = new Vector();
 			ScheduleInput input = schedulemanager.get(i);
 			row.add(input.getDate());
-			row.add(input.getName());
-			row.add(input.getPlace());
-			row.add(input.getWith());
-			row.add(input.getPnum());
+
 			model.addRow(row);
 		}
 		

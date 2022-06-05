@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Event.ButtonAddListener;
+import Event.ButtonViewListener;
+
 public class MenuSelection extends JPanel{
 	WindowsFrame frame;
 	
@@ -22,7 +25,7 @@ public class MenuSelection extends JPanel{
 		JButton button4 =new JButton("Add Selection");
 		JButton button5 =new JButton("Exit  Program");
 		
-		button1.addActionListener(new ButtonViewListener(frame));
+		button1.addActionListener(new ButtonAddListener(frame));
 		button2.addActionListener(new ButtonViewListener(frame));
 		
 		panel1.add(label); 
@@ -34,8 +37,7 @@ public class MenuSelection extends JPanel{
 		
 		this.add(panel1,BorderLayout.NORTH);
 		this.add(panel2,BorderLayout.CENTER);
-		
-		this.setVisible(true);
+
 	}
 
 }
