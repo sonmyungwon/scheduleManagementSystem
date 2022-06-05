@@ -9,7 +9,15 @@ public interface ScheduleInput {
 	void getUserInput(Scanner input);
 
 	int getDate();
-
+	
+	int getName();
+	
+	int getPlace();
+	
+	int getWith();
+	
+	int getPnum();
+	
 	void setDate(int date);
 
 	void setName(String name);

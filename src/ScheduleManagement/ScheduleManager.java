@@ -139,4 +139,10 @@ public class ScheduleManager implements Serializable {
 		System.out.println(" 6. Exit ");
 		System.out.println("Please enter a number:");
 	}
+	public int size() {
+		return schedules.size(); 
+	}
+	public  ScheduleInput get(int index) { 
+		return  schedules.get(index);
+	}
 }

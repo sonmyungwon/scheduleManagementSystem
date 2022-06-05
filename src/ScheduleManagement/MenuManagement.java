@@ -10,6 +10,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Log.EventLogger;
+import gui.WindowsFrame;
 
 public class MenuManagement {
 	static EventLogger Logger = new EventLogger("log.txt");
@@ -20,7 +21,8 @@ public class MenuManagement {
 		if(schedulemanager==null) {
 			schedulemanager = new ScheduleManager(input);
 		}
-
+		
+		WindowsFrame frame = new WindowsFrame(schedulemanager);
 		selectMenu(input ,schedulemanager);
 		putObject(schedulemanager,"Schedulemanager.ser");
 	}
