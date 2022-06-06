@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import Schedule.DeadlineSchedule;
 import Schedule.Highschedule;
 import Schedule.Importance;

@@ -10,21 +10,21 @@ public class WindowsFrame extends JFrame {
 	ScheduleAdder scheduleAdder ;
 	ScheduleViewer scheduleviewer;
 	ScheduleManager schedulemanager;
-	
+
 	public WindowsFrame(ScheduleManager schedulemanager) {
 		this.setSize(500,300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("My Frame");
-		
+
 		this.schedulemanager=schedulemanager;
 		menuselection =new MenuSelection(this);
 		scheduleAdder = new ScheduleAdder(this);
 		scheduleviewer = new ScheduleViewer(this,this.schedulemanager);
-		
+
 		this.setupPanel(menuselection);
 		this.setVisible(true);
 	}
-	
+
 	public void setupPanel(JPanel panel) {
 		this.getContentPane().removeAll();;
 		this.getContentPane().add(panel);
@@ -51,6 +51,6 @@ public class WindowsFrame extends JFrame {
 	public void setScheduleviewer(ScheduleViewer scheduleviewer) {
 		this.scheduleviewer = scheduleviewer;
 	}
-	
+
 }
 
