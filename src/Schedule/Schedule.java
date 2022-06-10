@@ -42,7 +42,7 @@ public abstract class Schedule  implements ScheduleInput,Serializable{
 	}
 	public abstract void printInfo();
 
-	public String getInportnace() {
+	public String getImportnace() {
 		String simp="none";
 		switch(this.imp){
 		case High:

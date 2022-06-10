@@ -27,7 +27,7 @@ public class MenuManagement {
 		putObject(schedulemanager,"Schedulemanager.ser");
 	}
 	public static void selectMenu(Scanner input,ScheduleManager schedulemanager) {
-		int com = -1;
+		int com = 0;
 		while(com!=5){
 			try {
 				showMenu(); 

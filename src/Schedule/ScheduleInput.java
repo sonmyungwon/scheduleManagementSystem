@@ -31,4 +31,12 @@ public interface ScheduleInput {
 	void setScheduleWith( Scanner input );
 	
 	void setSchedulePnum( Scanner input );
+
+	Object getName();
+
+	Object getPlace();
+
+	Object getWith();
+
+	Object getPnum();
 }

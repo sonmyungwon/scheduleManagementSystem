@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import ScheduleManagement.ScheduleManager;
 
 public class WindowsFrame extends JFrame {
+	
 	MenuSelection menuselection ;
 	ScheduleAdder scheduleAdder ;
 	ScheduleViewer scheduleviewer;
@@ -18,7 +19,7 @@ public class WindowsFrame extends JFrame {
 
 		this.schedulemanager=schedulemanager;
 		menuselection =new MenuSelection(this);
-		scheduleAdder = new ScheduleAdder(this);
+		scheduleAdder = new ScheduleAdder(this, this.schedulemanager);
 		scheduleviewer = new ScheduleViewer(this,this.schedulemanager);
 
 		this.setupPanel(menuselection);

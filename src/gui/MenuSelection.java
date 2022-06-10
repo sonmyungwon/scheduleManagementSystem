@@ -5,27 +5,31 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import Event.ButtonAddListener;
 import Event.ButtonViewListener;
 
 public class MenuSelection extends JPanel{
+	
 	WindowsFrame frame;
 	
 	public MenuSelection(WindowsFrame frame) {
 		this.frame = frame;
+		
 		this.setLayout(new BorderLayout());
+		
 		JPanel panel1 = new JPanel();
 		JPanel panel2 = new JPanel();
 		JLabel label = new JLabel("Menu Selection");
 		
 		JButton button1 =new JButton("Add Selection");
-		JButton button2 =new JButton("view Selection");
+		JButton button2 =new JButton("Delate Schedule");
 		JButton button3 =new JButton("edit Selection");
-		JButton button4 =new JButton("Add Selection");
+		JButton button4 =new JButton("View Schedules");
 		JButton button5 =new JButton("Exit  Program");
 		
 		button1.addActionListener(new ButtonAddListener(frame));
-		button2.addActionListener(new ButtonViewListener(frame));
+		button4.addActionListener(new ButtonViewListener(frame));
 		
 		panel1.add(label); 
 		panel2.add(button1);

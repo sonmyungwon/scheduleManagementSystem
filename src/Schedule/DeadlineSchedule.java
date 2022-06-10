@@ -48,7 +48,7 @@ public class DeadlineSchedule extends Schedule{
 		}
 	}
 	public void printInfo() {
-		String simp=getInportnace();
+		String simp=getImportnace();
 		System.out.println("inportance : "+ simp +"  Schedule Date:  "+ Date +"  Schedule Name:  " + Name +"  DeadLine :"+deadline+ "  Schedule Place:  "+ Place + "  With whom:  "+ With + "  Connect Phone Number:  " +Pnum);
 	}
 }

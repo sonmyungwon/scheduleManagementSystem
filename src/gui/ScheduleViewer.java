@@ -29,6 +29,10 @@ public class ScheduleViewer extends JPanel {
 			Vector row = new Vector();
 			ScheduleInput input = schedulemanager.get(i);
 			row.add(input.getDate());
+			row.add(input.getName());
+			row.add(input.getPlace());
+			row.add(input.getWith());
+			row.add(input.getPnum());
 
 			model.addRow(row);
 		}
@@ -37,5 +41,34 @@ public class ScheduleViewer extends JPanel {
 		JScrollPane sp = new JScrollPane(table);
 		
 		this.add(sp);
+	}
+
+	public void setSchedulemanger(ScheduleManager schedulemanager) {
+		this.schedulemanager = schedulemanager;
+		this.removeAll();
+		
+		DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("DATE");
+		model.addColumn("NAME");
+		model.addColumn("Place");
+		model.addColumn("With");
+		model.addColumn("Phone number");
+		for(int i = 0; i<schedulemanager.size(); i++) {
+			Vector row = new Vector();
+			ScheduleInput input = schedulemanager.get(i);
+			row.add(input.getDate());
+			row.add(input.getName());
+			row.add(input.getPlace());
+			row.add(input.getWith());
+			row.add(input.getPnum());
+
+			model.addRow(row);
+		}
+		
+		JTable table =new JTable(model);
+		JScrollPane sp = new JScrollPane(table);
+		
+		this.add(sp);
+		
 	}
 }

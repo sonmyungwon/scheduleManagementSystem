@@ -7,12 +7,18 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import Event.ScheduleAddCancelListener;
+import Event.ScheduleAdderListener;
+import ScheduleManagement.ScheduleManager;
+
 public class ScheduleAdder extends JPanel{
 	WindowsFrame frame;
+	ScheduleManager schedulemanager;
 
-	public ScheduleAdder(WindowsFrame frame){
+	public ScheduleAdder(WindowsFrame frame, ScheduleManager schedulemanager){
 		this.frame = frame;
-
+		this.schedulemanager= schedulemanager;
+		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
 
@@ -43,13 +49,20 @@ public class ScheduleAdder extends JPanel{
 		JLabel labelPnum = new JLabel("Phone number: ",JLabel.TRAILING);
 		JTextField fieldPnum = new JTextField(10);
 		labelPnum.setLabelFor(fieldPnum);
+		
+		JButton saveButton = new JButton("save");
+		saveButton.addActionListener(new ScheduleAdderListener(fieldDate,fieldName, fieldPlace, fieldWith, fieldPnum, schedulemanager));
+		
+		JButton cancelButton = new JButton("cancel");
+		cancelButton.addActionListener(new ScheduleAddCancelListener(frame));
+		
 		panel.add(labelPnum);
 		panel.add(fieldPnum);
 
-		panel.add(new JButton("save"));
-		panel.add(new JButton("cancel"));
+		panel.add(saveButton);
+		panel.add(cancelButton);
 
-		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6);
+		SpringUtilities.makeCompactGrid(panel, 6, 2, 6, 6, 6, 6);
 
 
 		this.add(panel);

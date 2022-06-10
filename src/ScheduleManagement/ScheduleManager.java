@@ -22,12 +22,23 @@ public class ScheduleManager implements Serializable {
 	public ScheduleManager(Scanner input) {
 		this.input=input;
 	}
+	
 	public void addmenu() {
 		System.out.println("1. high");
 		System.out.println("2. Low");
 		System.out.println("3. Deadline");
 		System.out.print("Select num 1,2 or 3 : ");
 	}
+	public void addschedule(int date, String name,String email, String Pnum) {
+		ScheduleInput ScheduleInput = new Highschedule(Importance.High);
+		ScheduleInput.getUserInput(input);
+		schedules.add(ScheduleInput);
+	}
+	
+	public void addschedule(ScheduleInput ScheduleInput) {
+		schedules.add(ScheduleInput);
+	}
+	
 	public void addschedule() {
 		int im=0;
 		ScheduleInput ScheduleInput;
@@ -62,12 +73,15 @@ public class ScheduleManager implements Serializable {
 
 	}
 	
+	
 	public void delateschedule() {		
 		System.out.print("date number: ");		
 		int scheduledata = input.nextInt();
 		int index=findIndex(scheduledata);
 		removefromSchedule(index,scheduledata);
 	}
+	
+	
 	public int findIndex(int scheduledate) {
 		int index=-1;
 		for(int i =0; i<=schedules.size();i++) {
@@ -79,6 +93,8 @@ public class ScheduleManager implements Serializable {
 		}
 		return index;
 	}
+	
+	
 	public int removefromSchedule(int index, int scheduledate) {
 		if(index>=0) {
 			schedules.remove(index);
@@ -89,6 +105,8 @@ public class ScheduleManager implements Serializable {
 		return -1;
 		}
 	}
+	
+	
 	public void editschedule() {
 		System.out.print("Date: ");		
 		int scheduleid = input.nextInt();
@@ -121,6 +139,8 @@ public class ScheduleManager implements Serializable {
 			}
 		}
 	}
+	
+	
 	public void viewchedules() {
 		System.out.println("# of registered members: " + schedules.size());
 		for(int i =0; i<schedules.size();i++) {
@@ -128,6 +148,8 @@ public class ScheduleManager implements Serializable {
 
 		}
 	}	
+	
+	
 	public void showEditmenu() {
 		System.out.println("schedule Info Edit Menu **");
 		System.out.println(" 1. Edit date");
@@ -138,9 +160,13 @@ public class ScheduleManager implements Serializable {
 		System.out.println(" 6. Exit ");
 		System.out.println("Please enter a number:");
 	}
+	
+	
 	public int size() {
 		return schedules.size(); 
 	}
+	
+	
 	public  ScheduleInput get(int index) { 
 		return  schedules.get(index);
 	}

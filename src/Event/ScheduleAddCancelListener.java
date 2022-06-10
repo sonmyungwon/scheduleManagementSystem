@@ -2,21 +2,23 @@ package Event;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import gui.ScheduleAdder;
+
 import gui.WindowsFrame;
 
-public class ButtonAddListener implements ActionListener {
-	WindowsFrame frame;
+public class ScheduleAddCancelListener implements ActionListener {
 	
-	public ButtonAddListener(WindowsFrame frame) {
+	WindowsFrame frame ;
+	
+	public ScheduleAddCancelListener(WindowsFrame frame) {	
 		this.frame= frame;
 	}
-	
+	@Override
 	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 		frame.getContentPane().removeAll();
-		frame.getContentPane().add(frame.getScheduleAdder());
+		frame.getContentPane().add(frame.getMenuselection());
 		frame.revalidate();
 		frame.repaint();
 	}
+
 }
