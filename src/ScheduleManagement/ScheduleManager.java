@@ -15,14 +15,14 @@ public class ScheduleManager implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -1906376578871793827L;
-	
+
 	ArrayList<ScheduleInput> schedules =new ArrayList<ScheduleInput>();
 	transient Scanner input;
 
 	public ScheduleManager(Scanner input) {
 		this.input=input;
 	}
-	
+
 	public void addmenu() {
 		System.out.println("1. high");
 		System.out.println("2. Low");
@@ -34,35 +34,35 @@ public class ScheduleManager implements Serializable {
 		ScheduleInput.getUserInput(input);
 		schedules.add(ScheduleInput);
 	}
-	
+
 	public void addschedule(ScheduleInput ScheduleInput) {
 		schedules.add(ScheduleInput);
 	}
-	
+
 	public void addschedule() {
 		int im=0;
 		ScheduleInput ScheduleInput;
 		try {
-		while(im <1 || im >3) {
-			addmenu();
-			im =input.nextInt();
-			if(im==1) {
-				ScheduleInput = new Highschedule(Importance.High);
-				ScheduleInput.getUserInput(input);
-				schedules.add(ScheduleInput);
-			}else if(im==2) {
-				ScheduleInput = new LowSchedule(Importance.Low);
-				ScheduleInput.getUserInput(input);
-				schedules.add(ScheduleInput);
-			}else if(im==3) {
-				ScheduleInput = new DeadlineSchedule(Importance.Deadline);
-				ScheduleInput.getUserInput(input);
-				schedules.add(ScheduleInput);
+			while(im <1 || im >3) {
+				addmenu();
+				im =input.nextInt();
+				if(im==1) {
+					ScheduleInput = new Highschedule(Importance.High);
+					ScheduleInput.getUserInput(input);
+					schedules.add(ScheduleInput);
+				}else if(im==2) {
+					ScheduleInput = new LowSchedule(Importance.Low);
+					ScheduleInput.getUserInput(input);
+					schedules.add(ScheduleInput);
+				}else if(im==3) {
+					ScheduleInput = new DeadlineSchedule(Importance.Deadline);
+					ScheduleInput.getUserInput(input);
+					schedules.add(ScheduleInput);
+				}
+				else {
+					System.out.print("select num 1 ,2 or 3");
+				}
 			}
-			else {
-				System.out.print("select num 1 ,2 or 3");
-			}
-		}
 		}catch(InputMismatchException e) {
 			System.out.println("please put an integer between 1 and 5 !");
 			if(input.hasNext()) {
@@ -72,16 +72,16 @@ public class ScheduleManager implements Serializable {
 		}
 
 	}
-	
-	
+
+
 	public void delateschedule() {		
 		System.out.print("date number: ");		
 		int scheduledata = input.nextInt();
 		int index=findIndex(scheduledata);
 		removefromSchedule(index,scheduledata);
 	}
-	
-	
+
+
 	public int findIndex(int scheduledate) {
 		int index=-1;
 		for(int i =0; i<=schedules.size();i++) {
@@ -89,12 +89,12 @@ public class ScheduleManager implements Serializable {
 				index= i;
 				break;
 			}
-			
+
 		}
 		return index;
 	}
-	
-	
+
+
 	public int removefromSchedule(int index, int scheduledate) {
 		if(index>=0) {
 			schedules.remove(index);
@@ -105,8 +105,8 @@ public class ScheduleManager implements Serializable {
 		return -1;
 		}
 	}
-	
-	
+
+
 	public void editschedule() {
 		System.out.print("Date: ");		
 		int scheduleid = input.nextInt();
@@ -139,8 +139,8 @@ public class ScheduleManager implements Serializable {
 			}
 		}
 	}
-	
-	
+
+
 	public void viewchedules() {
 		System.out.println("# of registered members: " + schedules.size());
 		for(int i =0; i<schedules.size();i++) {
@@ -148,8 +148,8 @@ public class ScheduleManager implements Serializable {
 
 		}
 	}	
-	
-	
+
+
 	public void showEditmenu() {
 		System.out.println("schedule Info Edit Menu **");
 		System.out.println(" 1. Edit date");
@@ -160,13 +160,13 @@ public class ScheduleManager implements Serializable {
 		System.out.println(" 6. Exit ");
 		System.out.println("Please enter a number:");
 	}
-	
-	
+
+
 	public int size() {
 		return schedules.size(); 
 	}
-	
-	
+
+
 	public  ScheduleInput get(int index) { 
 		return  schedules.get(index);
 	}

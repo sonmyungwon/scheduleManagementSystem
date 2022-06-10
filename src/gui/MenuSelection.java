@@ -10,34 +10,34 @@ import Event.ButtonAddListener;
 import Event.ButtonViewListener;
 
 public class MenuSelection extends JPanel{
-	
+
 	WindowsFrame frame;
-	
+
 	public MenuSelection(WindowsFrame frame) {
 		this.frame = frame;
-		
+
 		this.setLayout(new BorderLayout());
-		
+
 		JPanel panel1 = new JPanel();
 		JPanel panel2 = new JPanel();
 		JLabel label = new JLabel("Menu Selection");
-		
+
 		JButton button1 =new JButton("Add Selection");
 		JButton button2 =new JButton("Delate Schedule");
 		JButton button3 =new JButton("edit Selection");
 		JButton button4 =new JButton("View Schedules");
 		JButton button5 =new JButton("Exit  Program");
-		
+
 		button1.addActionListener(new ButtonAddListener(frame));
 		button4.addActionListener(new ButtonViewListener(frame));
-		
+
 		panel1.add(label); 
 		panel2.add(button1);
 		panel2.add(button2);
 		panel2.add(button3);
 		panel2.add(button4);
 		panel2.add(button5);
-		
+
 		this.add(panel1,BorderLayout.NORTH);
 		this.add(panel2,BorderLayout.CENTER);
 

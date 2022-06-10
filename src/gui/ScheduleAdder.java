@@ -18,7 +18,7 @@ public class ScheduleAdder extends JPanel{
 	public ScheduleAdder(WindowsFrame frame, ScheduleManager schedulemanager){
 		this.frame = frame;
 		this.schedulemanager= schedulemanager;
-		
+
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
 
@@ -49,13 +49,13 @@ public class ScheduleAdder extends JPanel{
 		JLabel labelPnum = new JLabel("Phone number: ",JLabel.TRAILING);
 		JTextField fieldPnum = new JTextField(10);
 		labelPnum.setLabelFor(fieldPnum);
-		
+
 		JButton saveButton = new JButton("save");
 		saveButton.addActionListener(new ScheduleAdderListener(fieldDate,fieldName, fieldPlace, fieldWith, fieldPnum, schedulemanager));
-		
+
 		JButton cancelButton = new JButton("cancel");
 		cancelButton.addActionListener(new ScheduleAddCancelListener(frame));
-		
+
 		panel.add(labelPnum);
 		panel.add(fieldPnum);
 

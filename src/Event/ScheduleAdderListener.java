@@ -61,7 +61,7 @@ public class ScheduleAdderListener implements ActionListener{
 		}
 
 	}
-	
+
 	public static void putObject(ScheduleManager schedulemanager, String filename) {
 		try {
 
@@ -79,6 +79,6 @@ public class ScheduleAdderListener implements ActionListener{
 			e.printStackTrace();
 		} 
 	}
-	
+
 
 }

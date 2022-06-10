@@ -13,12 +13,12 @@ import ScheduleManagement.ScheduleManager;
 public class ScheduleViewer extends JPanel {
 	WindowsFrame frame;
 	ScheduleManager schedulemanager;
-		
+
 	public ScheduleViewer(WindowsFrame frame, ScheduleManager schedulemanager) {
 		this.frame = frame;
 		this.schedulemanager = schedulemanager;
 		System.out.println("***" + schedulemanager.size()+ "***");
-		
+
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("DATE");
 		model.addColumn("NAME");
@@ -36,17 +36,17 @@ public class ScheduleViewer extends JPanel {
 
 			model.addRow(row);
 		}
-		
+
 		JTable table =new JTable(model);
 		JScrollPane sp = new JScrollPane(table);
-		
+
 		this.add(sp);
 	}
 
 	public void setSchedulemanger(ScheduleManager schedulemanager) {
 		this.schedulemanager = schedulemanager;
 		this.removeAll();
-		
+
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("DATE");
 		model.addColumn("NAME");
@@ -64,11 +64,11 @@ public class ScheduleViewer extends JPanel {
 
 			model.addRow(row);
 		}
-		
+
 		JTable table =new JTable(model);
 		JScrollPane sp = new JScrollPane(table);
-		
+
 		this.add(sp);
-		
+
 	}
 }

@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import ScheduleManagement.ScheduleManager;
 
 public class WindowsFrame extends JFrame {
-	
+
 	MenuSelection menuselection ;
 	ScheduleAdder scheduleAdder ;
 	ScheduleViewer scheduleviewer;

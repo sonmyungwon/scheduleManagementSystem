@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 import gui.WindowsFrame;
 
 public class ScheduleAddCancelListener implements ActionListener {
-	
+
 	WindowsFrame frame ;
-	
+
 	public ScheduleAddCancelListener(WindowsFrame frame) {	
 		this.frame= frame;
 	}
